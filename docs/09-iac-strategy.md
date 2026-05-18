@@ -8,11 +8,11 @@ Toda a camada de infraestrutura GCP é gerenciada com Terraform e a configuraç�
 - Módulos para rede, GKE, Pub/Sub, Cloud SQL e Cloud Run.
 
 ## Estrutura de módulos
-- `terraform/modules/network` → VPC, subnets, Cloud NAT, firewall.
-- `terraform/modules/gke` → cluster GKE Autopilot.
-- `terraform/modules/pubsub` → tópico Pub/Sub, DLQ e subscrição.
-- `terraform/modules/cloud-sql` → instância PostgreSQL HA + réplica.
-- `terraform/modules/cloud-run` → serviço Consolidado.
+- `terraform/modules/network` = VPC, subnets, Cloud NAT, firewall.
+- `terraform/modules/gke` = cluster GKE Autopilot.
+- `terraform/modules/pubsub` = tópico Pub/Sub, DLQ e subscrição.
+- `terraform/modules/cloud-sql` = instância PostgreSQL HA + réplica.
+- `terraform/modules/cloud-run` = serviço Consolidado.
 
 ## Backend remoto
 - `backend.tf` usa o GCS bucket para estado remoto.
