@@ -19,7 +19,7 @@ A estratégia de DR propõe para como solução, metas de RTO e RPO por componen
 ## Runbook de failover
 
 ### Fase 1 — Detecção
-1. Alerta do Cloud Monitoring dispara para o time (Pub/Sub → alertas críticos).
+1. Alerta do Cloud Monitoring dispara para o time (Pub/Sub = alertas críticos).
 2. Verificar o Cloud Status Dashboard e métricas da região `southamerica-east1`.
 3. Confirmar se a falha é de zona (reparação automática via HA) ou de região (acionar failover).
 
