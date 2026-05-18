@@ -13,7 +13,7 @@ Estimativa de latência média do consolidado:
 Requisições por instância no Cloud Run:
 - Concurrency padrão: 10
 - Taxa de processamento estimada: 10 req/s por instância
-- Instâncias mínimas necessárias: 52 / 10 = 5,2 → 6 instâncias
+- Instâncias mínimas necessárias: 52 / 10 = 5,2 ou 6 instâncias
 
 ### Dimensionamento por componente
 | Componente | Configuração estimada | Escala | Observação |
