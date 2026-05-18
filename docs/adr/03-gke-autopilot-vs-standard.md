@@ -1,7 +1,7 @@
 # GKE Autopilot vs Standard
 
 ## Contexto
-Precisa de um ambiente Kubernetes para o serviço de lançamentos, mas com menor sobrecarga de gestão.
+É necessário um ambiente Kubernetes para o serviço de lançamentos, mas com menor sobrecarga de gestão.
 
 ## Decisão
 Adotar o GKE Autopilot em vez do GKE Standard.
