@@ -1,0 +1,5 @@
+- name: Hardening de VM On-prem
+  hosts: onprem
+  become: true
+  roles:
+    - baseline-security

@@ -1,0 +1,54 @@
+- name: Atualizar cache de pacotes
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: Instalar pacotes de segurança
+  apt:
+    name:
+      - unattended-upgrades
+      - fail2ban
+      - auditd
+      - ufw
+    state: present
+
+- name: Habilitar UFW e permitir SSH e HTTPs
+  ufw:
+    state: enabled
+    rule: allow
+    name: "OpenSSH"
+
+- name: Permitir HTTPS no firewall
+  ufw:
+    rule: allow
+    port: 443
+    proto: tcp
+
+- name: Configurar atualizações automáticas
+  copy:
+    dest: /etc/apt/apt.conf.d/20auto-upgrades
+    content: |
+      APT::Periodic::Update-Package-Lists "1";
+      APT::Periodic::Unattended-Upgrade "1";
+
+- name: Configurar fail2ban com política básica
+  copy:
+    dest: /etc/fail2ban/jail.local
+    content: |
+      [sshd]
+      enabled = true
+      port = ssh
+      maxretry = 5
+      bantime = 3600
+
+- name: Reiniciar fail2ban
+  service:
+    name: fail2ban
+    state: restarted
+    enabled: yes
+
+- name: Habilitar auditd
+  service:
+    name: auditd
+    state: started
+    enabled: yes

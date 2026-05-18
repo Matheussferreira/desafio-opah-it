@@ -1,0 +1,13 @@
+project_id = "<seu-project-id>"
+region = "southamerica-east1"
+network_name = "vpc-desafio-opahit"
+subnet_cidr = "10.10.0.0/20"
+db_instance_name = "postgres-desafio"
+cloud_run_service_name = "consolidado-service"
+
+project_labels = {
+  env         = "dev"
+  owner       = "arquitetura"
+  cost-center = "OPAHIT"
+  app         = "fluxo-caixa"
+}
